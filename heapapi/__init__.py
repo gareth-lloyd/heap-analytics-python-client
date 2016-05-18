@@ -40,9 +40,9 @@ class HeapAPIClient():
 
         requests.post(self.base_url + '/track', data=json.dumps(data), headers={'Content-Type': 'application/json'})
 
-    def identify(self, identity=None, properties=None):
+    def add_user_properties(self, identity=None, properties=None):
         """
-        Post a "track" event to the Heap Analytics API server
+        Post a "add_user_properties" event to the Heap Analytics API server
         :param identity: user identity
         :type identity: str
         :param properties: optional, additional properties to associate with the user
@@ -60,4 +60,5 @@ class HeapAPIClient():
         if properties is not None:
             data["properties"] = properties
 
-        requests.post(self.base_url + '/identify', data=json.dumps(data), headers={'Content-Type': 'application/json'})
+        requests.post(self.base_url + '/add_user_properties', data=json.dumps(data),
+                      headers={'Content-Type': 'application/json'})
