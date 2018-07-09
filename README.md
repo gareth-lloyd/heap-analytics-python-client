@@ -1,7 +1,10 @@
 heap-analytics-python-client
 ----------------------------
 
-a Python client library for the Heap Analytics server-side API.
+[![Build Status](https://travis-ci.org/m-vdb/heap-analytics-python-client.svg?branch=master)](https://travis-ci.org/m-vdb/heap-analytics-python-client)
+[![Coverage Status](https://coveralls.io/repos/github/m-vdb/heap-analytics-python-client/badge.svg?branch=master)](https://coveralls.io/github/m-vdb/heap-analytics-python-client?branch=master)
+
+A Python client library for the Heap Analytics server-side API.
 
 It supports both the **track** and **identify** APIs. See [Heap documentation](https://docs.heapanalytics.com/reference#track-1).
 
