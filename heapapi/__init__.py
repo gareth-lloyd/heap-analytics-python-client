@@ -8,8 +8,9 @@ class HeapAPIClient(object):
     """
     The client for the Heap Api.
     """
+
     base_url = "https://heapanalytics.com/api"
-    headers = {'Content-Type': 'application/json'}
+    headers = {"Content-Type": "application/json"}
 
     def __init__(self, app_id):
         """
@@ -18,7 +19,7 @@ class HeapAPIClient(object):
         :param app_id: Heap analytics app_id
         :type app_id: str
         """
-        assert app_id, 'app_id must be valid!'
+        assert app_id, "app_id must be valid!"
         self.app_id = str(app_id)
 
     def track(self, identity, event, properties=None):
@@ -32,19 +33,13 @@ class HeapAPIClient(object):
         :param properties: optional, additional event properties
         :type properties: dict
         """
-        data = {
-            "app_id": self.app_id,
-            "identity": identity,
-            "event": event
-        }
+        data = {"app_id": self.app_id, "identity": identity, "event": event}
 
         if properties is not None:
             data["properties"] = properties
 
         response = requests.post(
-            self.base_url + '/track',
-            data=json.dumps(data),
-            headers=self.headers
+            self.base_url + "/track", data=json.dumps(data), headers=self.headers
         )
         response.raise_for_status()
         return response
@@ -58,16 +53,10 @@ class HeapAPIClient(object):
         :param properties: additional properties to associate with the user
         :type properties: dict
         """
-        data = {
-            "app_id": self.app_id,
-            "identity": identity,
-            "properties": properties,
-        }
+        data = {"app_id": self.app_id, "identity": identity, "properties": properties}
 
         response = requests.post(
-            self.base_url + '/add_user_properties',
-            data=json.dumps(data),
-            headers=self.headers
+            self.base_url + "/add_user_properties", data=json.dumps(data), headers=self.headers
         )
         response.raise_for_status()
         return response
