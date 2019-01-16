@@ -12,7 +12,7 @@ It supports both the **track** and **identify** APIs. See [Heap documentation](h
 Installation
 ------------
 ```
-pip install git+git://github.com/m-vdb/heap-analytics-python-client.git@v0.0.2
+pip install git+git://github.com/m-vdb/heap-analytics-python-client.git@v0.0.3
 ```
 
 Usage
